@@ -125,7 +125,7 @@ export default function RegistrationModal({ event, isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-100 flex flex-col max-h-[92vh]">
+      <div className="bg-white text-slate-900 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-100 flex flex-col max-h-[92vh]">
         
         {/* Header Banner */}
         <div className="relative p-6 bg-gradient-to-tr from-brand-900 via-indigo-900 to-brand-800 text-white">
@@ -288,7 +288,7 @@ export default function RegistrationModal({ event, isOpen, onClose }) {
                     if (fieldErrors.name) setFieldErrors({ ...fieldErrors, name: '' });
                   }}
                   placeholder="e.g. Alex Rivers"
-                  className={`w-full px-3.5 py-2.5 text-sm bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition ${
+                  className={`w-full px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition ${
                     fieldErrors.name ? 'border-rose-400 bg-rose-50/30' : 'border-slate-200'
                   }`}
                 />
@@ -311,7 +311,7 @@ export default function RegistrationModal({ event, isOpen, onClose }) {
                     if (fieldErrors.email) setFieldErrors({ ...fieldErrors, email: '' });
                   }}
                   placeholder="e.g. alex.rivers@campus.edu"
-                  className={`w-full px-3.5 py-2.5 text-sm bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition ${
+                  className={`w-full px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition ${
                     fieldErrors.email ? 'border-rose-400 bg-rose-50/30' : 'border-slate-200'
                   }`}
                 />
@@ -332,7 +332,7 @@ export default function RegistrationModal({ event, isOpen, onClose }) {
                     value={formData.rollNo}
                     onChange={(e) => setFormData({ ...formData, rollNo: e.target.value })}
                     placeholder="e.g. CS-2023-042"
-                    className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition"
+                    className="w-full px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition"
                   />
                 </div>
                 <div>
@@ -345,7 +345,7 @@ export default function RegistrationModal({ event, isOpen, onClose }) {
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
                     placeholder="e.g. Computer Science"
-                    className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition"
+                    className="w-full px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition"
                   />
                 </div>
               </div>
