@@ -246,12 +246,12 @@ export default function RegistrationModal({ event, isOpen, onClose }) {
                     setSelectedEventId(e.target.value);
                     setGeneralError('');
                   }}
-                  className={`w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white cursor-pointer transition ${
+                  className={`w-full px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 bg-slate-50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white cursor-pointer transition ${
                     fieldErrors.event ? 'border-rose-400 bg-rose-50/30' : 'border-slate-200'
                   }`}
                 >
                   {events.map((evt) => (
-                    <option key={evt.id} value={evt.id}>
+                    <option key={evt.id} value={evt.id} className="bg-white text-slate-900">
                       [{evt.category}] {evt.title} ({calculateSpotsLeft(evt)} seats left)
                     </option>
                   ))}
