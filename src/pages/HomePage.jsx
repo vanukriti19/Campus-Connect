@@ -26,25 +26,26 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
   return (
     <div className="space-y-16 pb-20 relative">
       
-      {/* Full-Bleed Header Background Artwork (Spans 100% full screen width, no left/right margins) */}
+      {/* Full-Bleed Header Background Artwork (Spans 100% full screen width, fully responsive on mobile & desktop) */}
       <div 
-        className="relative overflow-hidden select-none pointer-events-none -mt-8"
+        className="relative overflow-hidden select-none pointer-events-none -mt-4 sm:-mt-8"
         style={{
           width: '100vw',
           marginLeft: 'calc(-50vw + 50%)',
           marginRight: 'calc(-50vw + 50%)',
-          height: 'min(580px, 68vh)',
         }}
       >
-        <img
-          src="/campus-connect-hero.jpg"
-          alt="Campus Connect Header"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Gradients fading into page background (#120c10) so it does not interfere with content */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#120c10] via-[#120c10]/20 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#120c10] to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#120c10]/80 to-transparent" />
+        <div className="relative w-full aspect-[16/9] max-h-[580px] min-h-[190px] mx-auto">
+          <img
+            src="/campus-connect-hero.jpg"
+            alt="Campus Connect Header"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Gradients fading into page background (#120c10) with proportional mobile scaling */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#120c10] via-transparent to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-16 sm:h-28 md:h-40 bg-gradient-to-t from-[#120c10] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-6 sm:h-12 md:h-16 bg-gradient-to-b from-[#120c10]/80 to-transparent" />
+        </div>
       </div>
 
       {/* Editorial Hero Cover Section */}
