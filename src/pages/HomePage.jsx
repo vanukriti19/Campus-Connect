@@ -42,37 +42,42 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
           </div>
         </div>
 
-        {/* Hero Dramatic Title Layout with Pinterest Lanterns Background */}
-        <div className="relative py-12 sm:py-20 select-none overflow-hidden rounded-3xl my-2">
-          {/* Background image of glowing lanterns — visible layer */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Campus Connect Hero Artwork Banner with Blended Faded Edges */}
+        <div className="relative my-8 select-none overflow-hidden rounded-[40px] bg-[#120c10]">
+          {/* Main Artwork with CSS feather mask */}
+          <div 
+            className="relative w-full overflow-hidden"
+            style={{
+              WebkitMaskImage: 'radial-gradient(ellipse 96% 90% at 50% 50%, black 50%, transparent 100%)',
+              maskImage: 'radial-gradient(ellipse 96% 90% at 50% 50%, black 50%, transparent 100%)',
+            }}
+          >
             <img
-              src="/hero-accent.jpg"
-              alt="Glowing lanterns in night sky"
-              className="w-full h-full object-cover object-center opacity-75"
+              src="/campus-connect-hero.jpg"
+              alt="Campus Connect"
+              className="w-full h-auto max-h-[620px] object-cover object-center transform transition-transform duration-1000 ease-out hover:scale-[1.015]"
             />
-            {/* Soft edge gradients so text remains readable */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#120c10]/85 via-[#120c10]/10 to-[#120c10]/75" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#120c10]/60 via-transparent to-[#120c10]/60" />
-          </div>
 
-          {/* Content sits above background */}
-          <div className="relative z-10">
-            {/* Giant Condensed Display Heading */}
-            <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[13rem] font-black uppercase tracking-tight text-[#e89a92] leading-none text-center sm:text-left transition-all">
-              CAMPUS
-            </h1>
+            {/* Seamless 4-way edge feathering gradients blending into page background (#120c10) */}
+            {/* Top edge fade */}
+            <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#120c10] via-[#120c10]/60 to-transparent pointer-events-none" />
+            
+            {/* Bottom edge fade */}
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#120c10] via-[#120c10]/70 to-transparent pointer-events-none" />
+            
+            {/* Left edge fade */}
+            <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#120c10] via-[#120c10]/60 to-transparent pointer-events-none" />
+            
+            {/* Right edge fade */}
+            <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#120c10] via-[#120c10]/60 to-transparent pointer-events-none" />
 
-            {/* Overlapping Italic Script Accent */}
-            <div className="sm:absolute top-1/2 left-8 md:left-24 sm:-translate-y-1/2 mt-4 sm:mt-0">
-              <span className="font-serif italic text-2xl sm:text-4xl md:text-5xl text-[#faf3ee] drop-shadow-lg block -rotate-3 tracking-normal">
-                Experiences that Leave a Mark.
-              </span>
-            </div>
-
-            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[11rem] font-black uppercase tracking-tight text-[#faf3ee]/15 leading-none text-center sm:text-right mt-2 sm:-mt-10">
-              CONNECT
-            </h2>
+            {/* Subtle radial atmosphere blend */}
+            <div 
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(18, 12, 16, 0.45) 80%, rgba(18, 12, 16, 0.95) 100%)'
+              }}
+            />
           </div>
         </div>
 
