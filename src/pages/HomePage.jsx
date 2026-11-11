@@ -10,6 +10,7 @@ import {
 import { useEvents } from '../context/EventContext';
 import { useAuth } from '../context/AuthContext';
 import EventCard from '../components/events/EventCard';
+import CinematicParallaxSlideshow from '../components/events/CinematicParallaxSlideshow';
 import { INITIAL_CATEGORIES } from '../services/mockData';
 
 export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }) {
@@ -272,18 +273,12 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingEvents.map((event, idx) => (
-            <EventCard
-              key={event.id}
-              event={event}
-              indexNumber={idx + 1}
-              onRegisterClick={onRegisterClick}
-              onEditClick={onEditClick}
-              onDeleteClick={onDeleteClick}
-            />
-          ))}
-        </div>
+        <CinematicParallaxSlideshow
+          events={upcomingEvents}
+          onRegisterClick={onRegisterClick}
+          onEditClick={onEditClick}
+          onDeleteClick={onDeleteClick}
+        />
       </section>
 
     </div>
