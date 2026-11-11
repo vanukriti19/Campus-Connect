@@ -10,6 +10,7 @@ import {
 import { useEvents } from '../context/EventContext';
 import { useAuth } from '../context/AuthContext';
 import EventCard from '../components/events/EventCard';
+import Popout3DCard from '../components/events/Popout3DCard';
 import CinematicParallaxSlideshow from '../components/events/CinematicParallaxSlideshow';
 import { INITIAL_CATEGORIES } from '../services/mockData';
 
@@ -238,18 +239,12 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredEvents.map((event, idx) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                indexNumber={idx + 1}
-                onRegisterClick={onRegisterClick}
-                onEditClick={onEditClick}
-                onDeleteClick={onDeleteClick}
-              />
-            ))}
-          </div>
+          <CinematicParallaxSlideshow
+            events={featuredEvents}
+            onRegisterClick={onRegisterClick}
+            onEditClick={onEditClick}
+            onDeleteClick={onDeleteClick}
+          />
         </section>
       )}
 
@@ -273,12 +268,18 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
           </Link>
         </div>
 
-        <CinematicParallaxSlideshow
-          events={upcomingEvents}
-          onRegisterClick={onRegisterClick}
-          onEditClick={onEditClick}
-          onDeleteClick={onDeleteClick}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+          {upcomingEvents.map((event, idx) => (
+            <Popout3DCard
+              key={event.id}
+              event={event}
+              indexNumber={idx + 1}
+              onRegisterClick={onRegisterClick}
+              onEditClick={onEditClick}
+              onDeleteClick={onDeleteClick}
+            />
+          ))}
+        </div>
       </section>
 
     </div>
