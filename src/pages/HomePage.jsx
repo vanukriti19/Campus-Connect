@@ -24,10 +24,31 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
     .slice(0, 6);
 
   return (
-    <div className="space-y-20 pb-20">
+    <div className="space-y-16 pb-20 relative">
       
+      {/* Full-Bleed Header Background Artwork (Spans 100% full screen width, no left/right margins) */}
+      <div 
+        className="relative overflow-hidden select-none pointer-events-none -mt-8"
+        style={{
+          width: '100vw',
+          marginLeft: 'calc(-50vw + 50%)',
+          marginRight: 'calc(-50vw + 50%)',
+          height: 'min(580px, 68vh)',
+        }}
+      >
+        <img
+          src="/campus-connect-hero.jpg"
+          alt="Campus Connect Header"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Gradients fading into page background (#120c10) so it does not interfere with content */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#120c10] via-[#120c10]/20 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#120c10] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#120c10]/80 to-transparent" />
+      </div>
+
       {/* Editorial Hero Cover Section */}
-      <section className="relative overflow-hidden pt-8 pb-16 border-b border-[#382332]">
+      <section className="relative overflow-hidden pt-2 pb-16 border-b border-[#382332]">
         
         {/* Top Editorial Header Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono tracking-widest uppercase text-[#a89490] pb-6 border-b border-[#382332]/60">
@@ -44,47 +65,8 @@ export default function HomePage({ onRegisterClick, onEditClick, onDeleteClick }
           </div>
         </div>
 
-        {/* Campus Connect Hero Artwork Banner with Blended Faded Edges */}
-        <div className="relative my-8 select-none overflow-hidden rounded-[40px] bg-[#120c10]">
-          {/* Main Artwork with CSS feather mask */}
-          <div 
-            className="relative w-full overflow-hidden"
-            style={{
-              WebkitMaskImage: 'radial-gradient(ellipse 96% 90% at 50% 50%, black 50%, transparent 100%)',
-              maskImage: 'radial-gradient(ellipse 96% 90% at 50% 50%, black 50%, transparent 100%)',
-            }}
-          >
-            <img
-              src="/campus-connect-hero.jpg"
-              alt="Campus Connect"
-              className="w-full h-auto max-h-[620px] object-cover object-center transform transition-transform duration-1000 ease-out hover:scale-[1.015]"
-            />
-
-            {/* Seamless 4-way edge feathering gradients blending into page background (#120c10) */}
-            {/* Top edge fade */}
-            <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#120c10] via-[#120c10]/60 to-transparent pointer-events-none" />
-            
-            {/* Bottom edge fade */}
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#120c10] via-[#120c10]/70 to-transparent pointer-events-none" />
-            
-            {/* Left edge fade */}
-            <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#120c10] via-[#120c10]/60 to-transparent pointer-events-none" />
-            
-            {/* Right edge fade */}
-            <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#120c10] via-[#120c10]/60 to-transparent pointer-events-none" />
-
-            {/* Subtle radial atmosphere blend */}
-            <div 
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(18, 12, 16, 0.45) 80%, rgba(18, 12, 16, 0.95) 100%)'
-              }}
-            />
-          </div>
-        </div>
-
         {/* Hero Editorial Sub-Grid & Interactive Stamp */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-8 border-t border-[#382332]/80">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-8">
           
           <div className="md:col-span-4 space-y-3">
             <div className="text-xs font-mono uppercase tracking-widest text-[#e89a92] flex items-center gap-1.5">
